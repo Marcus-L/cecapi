@@ -42,7 +42,7 @@ The simplest Raspberry Pi CEC Python API (just HDMI on/off), but I'm still docum
 
     * Creates the `flask` virtual environment
     * Installs flask into it with `pip`
-    * Moves the `cecapi.service` file to `/lib/systemd/system`, sets permissions on the file, reloads daemons and starts the service.
+    * Copies the `cecapi.service` file to `/lib/systemd/system`, sets permissions on the file, reloads daemons and starts the service.
 
 1. Test the install
 
@@ -60,13 +60,11 @@ There's no security. The assumption is that you're running this behind a firewal
 
 ## Using the API
 
-Turn Off TV
+Turn Off/On TV
 ```bash
 curl -X GET http://127.0.0.1:50002/on
 curl -X GET http://127.0.0.1:50002/off
 ```
-
-Turn On TV
 
 ## Troubleshooting
 
