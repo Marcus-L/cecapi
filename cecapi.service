@@ -1,0 +1,11 @@
+[Unit]
+Description=CEC API Service
+After=multi-user.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/bin/python $DIRNAME/cecapi.py
+Restart=on-abort
+ 
+[Install]
+WantedBy=multi-user.target
