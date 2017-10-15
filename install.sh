@@ -13,7 +13,7 @@ flask/bin/pip install flask
 
 echo "Installing the service..."
 DIRNAME=`dirname "$(readlink -f "$0")" | sed -e 's/\//\\\\\//g'`
-cat cecapi.service | sed -e "s/DIRNAME/$DIRNAME/" >> /lib/systemd/system/cecapi.service
+cat cecapi.service | sed -e "s/DIRNAME/$DIRNAME/g" >> /lib/systemd/system/cecapi.service
 chmod 644 /lib/systemd/system/cecapi.service
 chmod +x cecapi.py
 systemctl daemon-reload
